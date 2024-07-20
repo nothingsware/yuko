@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100%;
+            background-color: #111111; /* Darker background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .intro-page {
+            text-align: center;
+            color: #ffffff;
+            font-family: 'Jacquard 12', sans-serif;
+            font-size: 2em;
+            animation: fadeInOut 1s infinite, typewriter 2s steps(10) 1s 1 normal both;
+            cursor: pointer;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .intro-page::after {
+            content: '';
+            display: inline-block;
+            width: 0.1em; /* Make typewriter line smaller */
+            background-color: rgba(255, 255, 255, 0.75);
+            animation: blink 1s infinite;
+        }
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+        @keyframes typewriter {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="intro-page" id="introPage">
+        <h1>Enter...</h1>
+    </div>
+    <script>
+        document.getElementById('introPage').addEventListener('click', () => {
+            window.location.href = 'main.html';
+        });
+    </script>
+</body>
+</html>

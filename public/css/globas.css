@@ -1,0 +1,133 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Satoshi", sans-serif;
+	width: 100%;
+	height: 100vh;
+	background-color: rgb(22, 22, 22);
+	color: white;
+	overflow: hidden auto;
+}
+
+.btn {
+	display: flex;
+	align-items: center;
+	gap: .25rem;
+	color: #67cae2;
+	background: linear-gradient(90deg, #3399c06b, #3365c04a);
+	border: 1px solid #2d5db18f;
+	border-radius: 17px;
+}
+
+*::-webkit-scrollbar {
+	height: 7px;
+	width: 7px;
+}
+
+*::-webkit-scrollbar-track {
+	border-radius: 5px;
+	background-color: rgb(22, 22, 22);
+}
+
+*::-webkit-scrollbar-track:hover {
+	background-color: rgb(22, 22, 22);
+}
+
+*::-webkit-scrollbar-track:active {
+	background-color: rgb(22, 22, 22);
+}
+
+*::-webkit-scrollbar-thumb {
+	border-radius: 5px;
+	background-color: #101010;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+	background-color: #101010;
+}
+
+*::-webkit-scrollbar-thumb:active {
+	background-color: #101010;
+}
+
+audio {
+	display: none; /* Hide the default audio controls */
+}
+
+.mute-button {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 50px;
+	height: 50px;
+	background: gray;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: transform 0.3s ease;
+}
+
+.mute-button:hover {
+	transform: scale(1.1);
+}
+
+    body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100%;
+            background-color: #111111; /* Darker background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .intro-page {
+            text-align: center;
+            color: #ffffff;
+            font-family: 'Jacquard 12', sans-serif;
+            font-size: 2em;
+            animation: fadeInOut 1s infinite, typewriter 2s steps(10) 1s 1 normal both;
+            cursor: pointer;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .intro-page::after {
+            content: '';
+            display: inline-block;
+            width: 0.1em; /* Make typewriter line smaller */
+            background-color: rgba(255, 255, 255, 0.75);
+            animation: blink 1s infinite;
+        }
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+        @keyframes typewriter {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+
+.mute-button i {
+	font-size: 30px;
+}
+

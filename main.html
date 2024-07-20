@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="#2F3136" name="theme-color">
+    <meta content="@yuk" property="og:title">
+    <title>@yuk</title>
+    <link rel="stylesheet" href="public/css/global.css">
+    <link rel="stylesheet" href="public/css/users.css">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@1&amp;f[]=array@400&amp;display=swap" rel="stylesheet">
+    <link rel="icon" href="/public/img/icon.png" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bungee&family=Creepster&family=Gloria+Hallelujah&family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+
+<body style="font-family: Satoshi, sans-serif; cursor: url('/cdn/files/cursor/853683708099821598.cur'), auto; background-color: #222222;">
+    <video class="background" autoplay muted loop>
+        <source src="/public/img/back.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <audio id="myAudio" loop>
+        <source src="audio.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="muteButton" class="mute-button">
+        <i id="muteIcon" class="fa-solid fa-volume-high"></i>
+    </div>
+    <div class="container">
+        <img class="avatar" src="/public/img/sq.png" alt="Avatar">
+
+        <div class="profileLayout">
+            <h1 class="profileUsername" style="color: #ffffff; text-shadow: 0 0 20px #ffffff;">@yuk</h1>
+
+            <div class="profileBadges">
+                <div class="profileBadge dev">
+                    <svg class="profileBadge" xmlns="http://www.w3.org/2000/svg" height="1.3em" viewBox="0 0 24 24" width="1.3em">
+                        <path d="m21.58 11.4-4.28-7.39-.35-.6h-9.91l-.35.6-4.27 7.39-.35.6.35.6 4.27 7.39.35.6h9.92l.35-.6 4.28-7.39.35-.6zm-13.07-1.03-1.63 1.63 1.63 1.63v2.73l-4.36-4.36 4.37-4.37v2.74zm3.12 6.93-2.04-.63 3.1-9.98 2.04.64zm3.86-.93v-2.73l1.63-1.64-1.63-1.63v-2.74l4.36 4.37z" style="filter: drop-shadow(0 0 1.5px #ffffff) !important;" fill="#ffffff" />
+                    </svg>
+                </div>
+
+                <div class="profileBadge certif">
+                    <svg class="profileBadge" xmlns="http://www.w3.org/2000/svg" style="fill: #ffffff; filter: drop-shadow(0 0 1.5px #ffffff) !important;" width="1em" height="1em" viewBox="1 1.5 22 21">
+                        <path d="m8.6 22.5l-1.9-3.2l-3.6-.8l.35-3.7L1 12l2.45-2.8l-.35-3.7l3.6-.8l1.9-3.2L12 2.95l3.4-1.45l1.9 3.2l3.6.8l-.35 3.7L23 12l-2.45 2.8l.35 3.7l-3.6.8l-1.9 3.2l-3.4-1.45l-3.4 1.45Zm2.35-6.95L16.6 9.9l-1.4-1.45l-4.25 4.25l-2.15-2.1L7.4 12l3.55 3.55Z"></path>
+                    </svg>
+                </div>
+
+                <div class="profileBadge owner" style="font-size: 1em; color: #ffffff; text-shadow: 0 0 1.5px #ffffff;">
+                    <i class="fa-solid fa-crown"></i>
+                </div>
+            </div>
+            <h3 id="typingText" style="color: #ffffff;" class="profileBio"></h3>
+            <div id="typingTexts" style="display: none;">Hello, Welcome!</div>
+            <script src="/public/js/typing.js"></script>
+        </div>
+
+        <div class="presenceWrapper">
+            <div class="presenceContainer">
+                <div class="discordInfos">
+                    <div class="discordAvatar">
+                        <img class="avatarImage" src="/public/img/b97ce44d1871ecb672d304aee55611fa.png" alt="Discord Avatar">
+                        <img class="discordStatus" src="/public/img/idle.png" alt="Idle Status">
+                    </div>
+                    <div class="discordActivity">
+                        <div class="discordUser">
+                            <div class="discordUserDiv">
+                                <span>yukarist</span>
+                                <div class="discordUserBadges">
+                                    <div class="discordUserBadge" data-tooltip="Subscriber since July 20, 2024">
+                                        <img src="/public/img/booster.png" alt="Discord Badge">
+                                    </div>
+                                    <div class="discordUserBadge" data-tooltip="Server boosting since April 5, 2024">
+                                        <img src="/public/img/boost.png" alt="Discord Badge">
+                                    </div>
+                                </div>
+                            </div>
+                            <h3>paytyn ❤</h3>
+                        </div>
+                        <div class="discordActivityImage"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="linkedAccounts">
+            <a data-type="TikTok" class="linkedAccountsRedirect" target="_blank" href="https://www.tiktok.com/@yukaristt" aria-label="TikTok Profile">
+                <i class="fa-brands fa-tiktok tiktok-icon"></i>
+            </a>
+            <a data-type="Spotify" class="linkedAccountsRedirect" target="_blank" href="https://open.spotify.com/user/camfabre554?si=EAZABawDQdOs3H60SMEqmQ&nd=1&dlsi=240879faeead4cba">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.8em" height="1.8em" viewBox="2.02 2.02 19.98 19.98">
+                    <path fill="currentColor" d="M12.01 2.019c-5.495 0-9.991 4.496-9.991 9.991c0 5.494 4.496 9.99 9.991 9.99c5.494 0 9.99-4.496 9.99-9.99c0-5.495-4.446-9.991-9.99-9.991zm4.595 14.436c-.199.299-.549.4-.85.201c-2.349-1.45-5.296-1.75-8.793-.951c-.348.102-.648-.148-.748-.449c-.101-.35.149-.648.45-.749c3.795-.85 7.093-.499 9.69 1.1c.35.149.4.548.251.848zm1.2-2.747c-.251.349-.7.499-1.051.249c-2.697-1.646-6.792-2.148-9.939-1.148c-.398.101-.85-.1-.949-.498c-.101-.402.1-.852.499-.952c3.646-1.098 8.143-.548 11.239 1.351c.3.149.45.648.201.998zm.099-2.799c-3.197-1.897-8.542-2.097-11.59-1.146a.938.938 0 0 1-1.148-.6a.937.937 0 0 1 .599-1.151c3.547-1.049 9.392-.85 13.089 1.351c.449.249.599.849.349 1.298c-.25.35-.849.498-1.299.248z"></path>
+                </svg>
+            </a>
+            <a data-type="YouTube" class="linkedAccountsRedirect" target="_blank" href="https://www.youtube.com/channel/UC1cA6Z7Y5DrKGpFWeBt4YFw">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.8em" height="1.8em" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M23.498 6.186c-.291-1.096-1.145-1.95-2.241-2.24C19.245 3.5 12 3.5 12 3.5s-7.245 0-9.258.446c-1.096.29-1.95 1.144-2.241 2.24C0 8.199 0 12 0 12s0 3.801.501 5.814c.291 1.096 1.145 1.95 2.241 2.24C4.755 20.5 12 20.5 12 20.5s7.245 0 9.258-.446c1.096-.29 1.95-1.144 2.241-2.24C24 15.801 24 12 24 12s0-3.801-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <div style="display: none;" id="curEffClr">#ffffff</div>
+    <script src="/public/js/cur-snow.js"></script>
+
+    <script>
+        const audio = document.getElementById('myAudio');
+        const muteButton = document.getElementById('muteButton');
+        const muteIcon = document.getElementById('muteIcon');
+
+        muteButton.addEventListener('click', () => {
+            if (audio.muted) {
+                audio.muted = false;
+                muteIcon.classList.remove('fa-volume-xmark');
+                muteIcon.classList.add('fa-volume-high');
+            } else {
+                audio.muted = true;
+                muteIcon.classList.remove('fa-volume-high');
+                muteIcon.classList.add('fa-volume-xmark');
+            }
+        });
+
+        // Start the audio manually for testing purposes
+        document.body.addEventListener('click', () => {
+            audio.play().catch(error => {
+                console.error('Audio play failed:', error);
+            });
+        });
+    </script>
+</body>
+
+</html>
