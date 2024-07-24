@@ -27,11 +27,11 @@
             position: fixed;
             top: 0;
             left: 0;
-            background-color: rgba(0, 0, 0, 0.7); 
+            background-color: #000000;
             color: #ffffff;
-            font-family: 'Jacquard 12', sans-serif;
+            font-family: 'Permanent Marker', cursive;
             font-size: 2em;
-            animation: typewriter 2s steps(10) 1s 1 normal both;
+            animation: typewriter 4s steps(40) 1s 1 normal both;
             cursor: pointer;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
             overflow: hidden;
@@ -41,7 +41,7 @@
         .intro-page::after {
             content: '';
             display: inline-block;
-            width: 0.1em; 
+            width: 0.1em;
             background-color: rgba(255, 255, 255, 0.75);
             animation: blink 1s infinite;
         }
@@ -57,43 +57,37 @@
                 opacity: 0;
             }
         }
-          .mute-button {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    font-size: 2em;
-    color: #6f6e6e;
-    cursor: pointer;
-    z-index: 10;
-    padding: 10px;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.5);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-}
-
-.mute-button:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-    transform: scale(1.1);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-}
-
-.mute-button:active {
-    transform: scale(0.9);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.mute-button i {
-    transition: color 0.3s;
-}
-
-.mute-button i.fa-volume-high {
-    color: #929292;
-}
-
-.mute-button i.fa-volume-xmark {
-    color: #1d1c1c; 
-}
+        .mute-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 2em;
+            color: #6f6e6e;
+            cursor: pointer;
+            z-index: 10;
+            padding: 10px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+        .mute-button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+        .mute-button:active {
+            transform: scale(0.9);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .mute-button i {
+            transition: color 0.3s;
+        }
+        .mute-button i.fa-volume-high {
+            color: #929292;
+        }
+        .mute-button i.fa-volume-xmark {
+            color: #1d1c1c; 
         }
     </style>
 </head>
@@ -111,9 +105,9 @@
     </div>
 
     <div class="intro-page" id="introPage">
-        <h1>Enter...</h1>
+        <h1>Welcome to @9yuk...</h1>
     </div>
-    <div class="container">
+    <div class="container" style="display: none;">
         <img class="avatar" src="/public/img/sq.png" alt="Avatar">
         <div class="profileLayout">
             <h1 class="profileUsername" style="color: #ffffff; text-shadow: 0 0 20px #ffffff;">9yuk</h1>
@@ -182,6 +176,7 @@
             const muteButton = document.getElementById("muteButton");
             const muteIcon = document.getElementById("muteIcon");
             const myAudio = document.getElementById("myAudio");
+            const container = document.querySelector('.container');
 
             // Play audio by default when the page loads
             myAudio.play();
@@ -199,9 +194,10 @@
                 }
             });
 
-            // Hide intro page when clicked
+            // Hide intro page when clicked and show the main content
             introPage.addEventListener("click", function() {
                 introPage.style.display = "none";
+                container.style.display = "block";
             });
         });
     </script>
