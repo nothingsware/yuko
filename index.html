@@ -34,6 +34,11 @@
     <div class="container">
         <img class="avatar" src="/public/img/sq.png" alt="Avatar">
 
+        <div class="profileViews">
+        <i class="fa-solid fa-eye"></i>
+        <span id="viewCount">0</span>
+    </div>
+</div>
         <div class="profileLayout">
             <h1 class="profileUsername" style="color: #ffffff; text-shadow: 0 0 20px #ffffff;">@yuk</h1>
 
@@ -107,30 +112,46 @@
     <div style="display: none;" id="curEffClr">#ffffff</div>
     <script src="/public/js/cur-snow.js"></script>
 
-    <script>
-        const audio = document.getElementById('myAudio');
-        const muteButton = document.getElementById('muteButton');
-        const muteIcon = document.getElementById('muteIcon');
+<script>
+    const audio = document.getElementById('myAudio');
+    const muteButton = document.getElementById('muteButton');
+    const muteIcon = document.getElementById('muteIcon');
+    const viewCountElement = document.getElementById('viewCount');
 
-        muteButton.addEventListener('click', () => {
-            if (audio.muted) {
-                audio.muted = false;
-                muteIcon.classList.remove('fa-volume-xmark');
-                muteIcon.classList.add('fa-volume-high');
-            } else {
-                audio.muted = true;
-                muteIcon.classList.remove('fa-volume-high');
-                muteIcon.classList.add('fa-volume-xmark');
-            }
-        });
+    // Audio control functionality
+    muteButton.addEventListener('click', () => {
+        if (audio.muted) {
+            audio.muted = false;
+            muteIcon.classList.remove('fa-volume-xmark');
+            muteIcon.classList.add('fa-volume-high');
+        } else {
+            audio.muted = true;
+            muteIcon.classList.remove('fa-volume-high');
+            muteIcon.classList.add('fa-volume-xmark');
+        }
+    });
 
-        // Start the audio manually for testing purposes
-        document.body.addEventListener('click', () => {
-            audio.play().catch(error => {
-                console.error('Audio play failed:', error);
-            });
+    // Initialize view count
+    if (viewCountElement) {
+        let viewCount = localStorage.getItem('viewCount') || 0;
+        viewCountElement.textContent = viewCount;
+
+        // Increment view count
+        viewCount++;
+        viewCountElement.textContent = viewCount;
+
+        // Save the updated view count to local storage
+        localStorage.setItem('viewCount', viewCount);
+    }
+
+    // Start the audio manually for testing purposes
+    document.body.addEventListener('click', () => {
+        audio.play().catch(error => {
+            console.error('Audio play failed:', error);
         });
-    </script>
+    });
+</script>
+
 </body>
 
 </html>
