@@ -14,8 +14,35 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bungee&family=Creepster&family=Gloria+Hallelujah&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+    <style>
+        /* Add styles for the video background */
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Ensure the video stays behind other content */
+        }
+
+        /* Ensure the container is visible */
+        .container {
+            position: relative;
+            z-index: 1; /* Ensure it is on top of the video */
+        }
+
+        /* Ensure the mute button is visible */
+        .mute-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 2; /* Ensure it is on top of other content */
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <video class="background" autoplay muted loop>
@@ -23,14 +50,14 @@
         Your browser does not support the video tag.
     </video>
     <audio id="myAudio" loop>
-        <source src="audio.mp3" type="audio/mpeg">
+        <source src="/public/audio.mp3" type="audio/mpeg"> <!-- Ensure path is correct -->
     </audio>
 
     <div id="muteButton" class="mute-button">
         <i id="muteIcon" class="fa-solid fa-volume-high"></i>
     </div>
 
-    <div class="container" style="display: none;">
+    <div class="container" style="display: block;"> <!-- Changed from none to block -->
         <img class="avatar" src="/public/img/sq.png" alt="Avatar">
         <div class="profileLayout">
             <h1 class="profileUsername" style="color: #ffffff; text-shadow: 0 0 20px #ffffff;">9yuk</h1>
@@ -98,7 +125,6 @@
             const muteButton = document.getElementById("muteButton");
             const muteIcon = document.getElementById("muteIcon");
             const myAudio = document.getElementById("myAudio");
-
 
             // Play audio by default when the page loads
             myAudio.play();
