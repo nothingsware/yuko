@@ -1,13 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="#2F3136" name="theme-color">
-    <meta content="@yuk" property="og:title">
-    <title>@yuk</title>
+    <meta content="@9yuk" property="og:title">
+    <title>@9yuk</title>
     <link rel="stylesheet" href="public/css/global.css">
     <link rel="stylesheet" href="public/css/users.css">
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@1&amp;f[]=array@400&amp;display=swap" rel="stylesheet">
@@ -18,9 +16,62 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bungee&family=Creepster&family=Gloria+Hallelujah&family=Permanent+Marker&display=swap" rel="stylesheet">
-</head>
 
-<body style="font-family: Satoshi, sans-serif; cursor: url('/cdn/files/cursor/853683708099821598.cur'), auto; background-color: #222222;">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #222222; /* Darker background */
+            font-family: Satoshi, sans-serif;
+            cursor: url('/cdn/files/cursor/853683708099821598.cur'), auto;
+        }
+        .intro-page {
+            text-align: center;
+            color: #ffffff;
+            font-family: 'Jacquard 12', sans-serif;
+            font-size: 2em;
+            animation: typewriter 2s steps(10) 1s 1 normal both;
+            cursor: pointer;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .intro-page::after {
+            content: '';
+            display: inline-block;
+            width: 0.1em; /* Make typewriter line smaller */
+            background-color: rgba(255, 255, 255, 0.75);
+            animation: blink 1s infinite;
+        }
+        @keyframes typewriter {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+        .mute-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 2em;
+            color: #ffffff;
+            cursor: pointer;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
     <video class="background" autoplay muted loop>
         <source src="/public/img/back.mp4" type="video/mp4">
         Your browser does not support the video tag.
@@ -32,25 +83,25 @@
     <div id="muteButton" class="mute-button">
         <i id="muteIcon" class="fa-solid fa-volume-high"></i>
     </div>
+
     <div class="container">
+        <div class="intro-page" id="introPage">
+            <h1>Enter...</h1>
+        </div>
         <img class="avatar" src="/public/img/sq.png" alt="Avatar">
-
         <div class="profileLayout">
-            <h1 class="profileUsername" style="color: #ffffff; text-shadow: 0 0 20px #ffffff;">@yuk</h1>
-
+            <h1 class="profileUsername" style="color: #ffffff; text-shadow: 0 0 20px #ffffff;">9yuk</h1>
             <div class="profileBadges">
                 <div class="profileBadge dev">
                     <svg class="profileBadge" xmlns="http://www.w3.org/2000/svg" height="1.3em" viewBox="0 0 24 24" width="1.3em">
-                        <path d="m21.58 11.4-4.28-7.39-.35-.6h-9.91l-.35.6-4.27 7.39-.35.6.35.6 4.27 7.39.35.6h9.92l.35-.6 4.28-7.39.35-.6zm-13.07-1.03-1.63 1.63 1.63 1.63v2.73l-4.36-4.36 4.37-4.37v2.74zm3.12 6.93-2.04-.63 3.1-9.98 2.04.64zm3.86-.93v-2.73l1.63-1.64-1.63-1.63v-2.74l4.36 4.37z" style="filter: drop-shadow(0 0 1.5px #ffffff) !important;" fill="#ffffff" />
+                        <path d="m21.58 11.4-4.28-7.39-.35-.6h-9.91l-.35.6-4.27 7.39-.35.6.35.6 4.27 7.39.35.6h9.92l.35-.6 4.28-7.39.35-.6zm-13.07-1.03-1.63 1.63 1.63 1.63v2.73l-4.36-4.36 4.37-4.37v2.74zm3.12 6.93-2.04-.63 3.1-9.98 2.04.64zm3.86-.93v-2.73l1.63-1.64-1.63-1.63v-2.74l4.36 4.37z" style="filter: drop-shadow(0 0 1.5px #ffffff) !important;" fill="#ffffff"/>
                     </svg>
                 </div>
-
                 <div class="profileBadge certif">
                     <svg class="profileBadge" xmlns="http://www.w3.org/2000/svg" style="fill: #ffffff; filter: drop-shadow(0 0 1.5px #ffffff) !important;" width="1em" height="1em" viewBox="1 1.5 22 21">
                         <path d="m8.6 22.5l-1.9-3.2l-3.6-.8l.35-3.7L1 12l2.45-2.8l-.35-3.7l3.6-.8l1.9-3.2L12 2.95l3.4-1.45l1.9 3.2l3.6.8l-.35 3.7L23 12l-2.45 2.8l.35 3.7l-3.6.8l-1.9 3.2l-3.4-1.45l-3.4 1.45Zm2.35-6.95L16.6 9.9l-1.4-1.45l-4.25 4.25l-2.15-2.1L7.4 12l3.55 3.55Z"></path>
                     </svg>
                 </div>
-
                 <div class="profileBadge owner" style="font-size: 1em; color: #ffffff; text-shadow: 0 0 1.5px #ffffff;">
                     <i class="fa-solid fa-crown"></i>
                 </div>
@@ -59,7 +110,6 @@
             <div id="typingTexts" style="display: none;">Hello, Welcome!</div>
             <script src="/public/js/typing.js"></script>
         </div>
-
         <div class="presenceWrapper">
             <div class="presenceContainer">
                 <div class="discordInfos">
@@ -87,7 +137,6 @@
                 </div>
             </div>
         </div>
-
         <div class="linkedAccounts">
             <a data-type="TikTok" class="linkedAccountsRedirect" target="_blank" href="https://www.tiktok.com/@yukaristt" aria-label="TikTok Profile">
                 <i class="fa-brands fa-tiktok tiktok-icon"></i>
@@ -104,10 +153,10 @@
             </a>
         </div>
     </div>
-
+    
     <div style="display: none;" id="curEffClr">#ffffff</div>
     <script src="/public/js/cur-snow.js"></script>
-
+    
     <script>
         const audio = document.getElementById('myAudio');
         const muteButton = document.getElementById('muteButton');
@@ -131,7 +180,10 @@
                 console.error('Audio play failed:', error);
             });
         });
+
+        document.getElementById('introPage').addEventListener('click', () => {
+            document.getElementById('introPage').style.display = 'none';
+        });
     </script>
 </body>
-
 </html>
