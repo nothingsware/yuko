@@ -18,20 +18,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bungee&family=Creepster&family=Gloria+Hallelujah&family=Permanent+Marker&display=swap" rel="stylesheet">
 
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #222222; /* Darker background */
-            font-family: Satoshi, sans-serif;
-            cursor: url('/cdn/files/cursor/853683708099821598.cur'), auto;
-        }
         .intro-page {
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100vw;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.7); 
             color: #ffffff;
             font-family: 'Jacquard 12', sans-serif;
             font-size: 2em;
@@ -40,11 +36,12 @@
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
             overflow: hidden;
             white-space: nowrap;
+            z-index: 1000;
         }
         .intro-page::after {
             content: '';
             display: inline-block;
-            width: 0.1em; /* Make typewriter line smaller */
+            width: 0.1em; 
             background-color: rgba(255, 255, 255, 0.75);
             animation: blink 1s infinite;
         }
@@ -60,14 +57,43 @@
                 opacity: 0;
             }
         }
-        .mute-button {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            font-size: 2em;
-            color: #ffffff;
-            cursor: pointer;
-            z-index: 10;
+          .mute-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 2em;
+    color: #6f6e6e;
+    cursor: pointer;
+    z-index: 10;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.mute-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.mute-button:active {
+    transform: scale(0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.mute-button i {
+    transition: color 0.3s;
+}
+
+.mute-button i.fa-volume-high {
+    color: #929292;
+}
+
+.mute-button i.fa-volume-xmark {
+    color: #1d1c1c; 
+}
         }
     </style>
 </head>
@@ -84,10 +110,10 @@
         <i id="muteIcon" class="fa-solid fa-volume-high"></i>
     </div>
 
+    <div class="intro-page" id="introPage">
+        <h1>Enter...</h1>
+    </div>
     <div class="container">
-        <div class="intro-page" id="introPage">
-            <h1>Enter...</h1>
-        </div>
         <img class="avatar" src="/public/img/sq.png" alt="Avatar">
         <div class="profileLayout">
             <h1 class="profileUsername" style="color: #ffffff; text-shadow: 0 0 20px #ffffff;">9yuk</h1>
@@ -141,48 +167,42 @@
             <a data-type="TikTok" class="linkedAccountsRedirect" target="_blank" href="https://www.tiktok.com/@yukaristt" aria-label="TikTok Profile">
                 <i class="fa-brands fa-tiktok tiktok-icon"></i>
             </a>
-            <a data-type="Spotify" class="linkedAccountsRedirect" target="_blank" href="https://open.spotify.com/user/camfabre554?si=EAZABawDQdOs3H60SMEqmQ&nd=1&dlsi=240879faeead4cba">
-                <svg xmlns="http://www.w3.org/2000/svg" width="1.8em" height="1.8em" viewBox="2.02 2.02 19.98 19.98">
-                    <path fill="currentColor" d="M12.01 2.019c-5.495 0-9.991 4.496-9.991 9.991c0 5.494 4.496 9.99 9.991 9.99c5.494 0 9.99-4.496 9.99-9.99c0-5.495-4.446-9.991-9.99-9.991zm4.595 14.436c-.199.299-.549.4-.85.201c-2.349-1.45-5.296-1.75-8.793-.951c-.348.102-.648-.148-.748-.449c-.101-.35.149-.648.45-.749c3.795-.85 7.093-.499 9.69 1.1c.35.149.4.548.251.848zm1.2-2.747c-.251.349-.7.499-1.051.249c-2.697-1.646-6.792-2.148-9.939-1.148c-.398.101-.85-.1-.949-.498c-.101-.402.1-.852.499-.952c3.646-1.098 8.143-.548 11.239 1.351c.3.149.45.648.201.998zm.099-2.799c-3.197-1.897-8.542-2.097-11.59-1.146a.938.938 0 0 1-1.148-.6a.937.937 0 0 1 .599-1.151c3.547-1.049 9.392-.85 13.089 1.351c.449.249.599.849.349 1.298c-.25.35-.849.498-1.299.248z"></path>
-                </svg>
+            <a data-type="Spotify" class="linkedAccountsRedirect" target="_blank" href="https://open.spotify.com/user/camfabre554?si=EAZABawDQdOs3H60rKPIxg" aria-label="Spotify Profile">
+                <i class="fa-brands fa-spotify spotify-icon"></i>
             </a>
-            <a data-type="YouTube" class="linkedAccountsRedirect" target="_blank" href="https://www.youtube.com/channel/UC1cA6Z7Y5DrKGpFWeBt4YFw">
-                <svg xmlns="http://www.w3.org/2000/svg" width="1.8em" height="1.8em" viewBox="0 0 24 24">
-                    <path fill="currentColor" d="M23.498 6.186c-.291-1.096-1.145-1.95-2.241-2.24C19.245 3.5 12 3.5 12 3.5s-7.245 0-9.258.446c-1.096.29-1.95 1.144-2.241 2.24C0 8.199 0 12 0 12s0 3.801.501 5.814c.291 1.096 1.145 1.95 2.241 2.24C4.755 20.5 12 20.5 12 20.5s7.245 0 9.258-.446c1.096-.29 1.95-1.144 2.241-2.24C24 15.801 24 12 24 12s0-3.801-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
-                </svg>
+            <a data-type="Instagram" class="linkedAccountsRedirect" target="_blank" href="https://instagram.com/yukaristt" aria-label="Instagram Profile">
+                <i class="fa-brands fa-instagram instagram-icon"></i>
             </a>
         </div>
     </div>
-    
-    <div style="display: none;" id="curEffClr">#ffffff</div>
-    <script src="/public/js/cur-snow.js"></script>
-    
+
     <script>
-        const audio = document.getElementById('myAudio');
-        const muteButton = document.getElementById('muteButton');
-        const muteIcon = document.getElementById('muteIcon');
+        document.addEventListener("DOMContentLoaded", function() {
+            const introPage = document.getElementById("introPage");
+            const muteButton = document.getElementById("muteButton");
+            const muteIcon = document.getElementById("muteIcon");
+            const myAudio = document.getElementById("myAudio");
 
-        muteButton.addEventListener('click', () => {
-            if (audio.muted) {
-                audio.muted = false;
-                muteIcon.classList.remove('fa-volume-xmark');
-                muteIcon.classList.add('fa-volume-high');
-            } else {
-                audio.muted = true;
-                muteIcon.classList.remove('fa-volume-high');
-                muteIcon.classList.add('fa-volume-xmark');
-            }
-        });
+            // Play audio by default when the page loads
+            myAudio.play();
 
-        // Start the audio manually for testing purposes
-        document.body.addEventListener('click', () => {
-            audio.play().catch(error => {
-                console.error('Audio play failed:', error);
+            // Mute/unmute audio when the button is clicked
+            muteButton.addEventListener("click", function() {
+                if (myAudio.muted) {
+                    myAudio.muted = false;
+                    muteIcon.classList.remove("fa-volume-xmark");
+                    muteIcon.classList.add("fa-volume-high");
+                } else {
+                    myAudio.muted = true;
+                    muteIcon.classList.remove("fa-volume-high");
+                    muteIcon.classList.add("fa-volume-xmark");
+                }
             });
-        });
 
-        document.getElementById('introPage').addEventListener('click', () => {
-            document.getElementById('introPage').style.display = 'none';
+            // Hide intro page when clicked
+            introPage.addEventListener("click", function() {
+                introPage.style.display = "none";
+            });
         });
     </script>
 </body>
