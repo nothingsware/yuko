@@ -425,17 +425,7 @@ body {
 }
 
 .container .profileViews {
-    display: flex;
-    align-items: center;
-    gap: .25rem;
-    padding: 5px 10px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
-.profileViews {
-    display: flex;
+   display: flex;
     align-items: center;
     gap: .25rem;
     padding: 5px 10px;
