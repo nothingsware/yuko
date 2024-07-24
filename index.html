@@ -15,17 +15,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bungee&family=Creepster&family=Gloria+Hallelujah&family=Permanent+Marker&display=swap" rel="stylesheet">
 </head>
 
 <body style="font-family: Satoshi, sans-serif; cursor: url('/cdn/files/cursor/853683708099821598.cur'), auto; background-color: #222222;">
     <video class="background" autoplay muted loop>
         <source src="/public/img/back.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        Votre navigateur ne supporte pas la balise vidéo.
     </video>
     <audio id="myAudio" loop>
         <source src="audio.mp3" type="audio/mpeg">
+        Votre navigateur ne supporte pas la balise audio.
     </audio>
 
     <div id="muteButton" class="mute-button">
@@ -35,10 +35,10 @@
         <img class="avatar" src="/public/img/sq.png" alt="Avatar">
 
         <div class="profileViews">
-        <i class="fa-solid fa-eye"></i>
-        <span id="viewCount">0</span>
-    </div>
-</div>
+            <i class="fa-solid fa-eye"></i>
+            <span id="viewCount">0</span>
+        </div>
+
         <div class="profileLayout">
             <h1 class="profileUsername" style="color: #ffffff; text-shadow: 0 0 20px #ffffff;">@yuk</h1>
 
@@ -112,46 +112,44 @@
     <div style="display: none;" id="curEffClr">#ffffff</div>
     <script src="/public/js/cur-snow.js"></script>
 
-<script>
-    const audio = document.getElementById('myAudio');
-    const muteButton = document.getElementById('muteButton');
-    const muteIcon = document.getElementById('muteIcon');
-    const viewCountElement = document.getElementById('viewCount');
+    <script>
+        const audio = document.getElementById('myAudio');
+        const muteButton = document.getElementById('muteButton');
+        const muteIcon = document.getElementById('muteIcon');
+        const viewCountElement = document.getElementById('viewCount');
 
-    // Audio control functionality
-    muteButton.addEventListener('click', () => {
-        if (audio.muted) {
-            audio.muted = false;
-            muteIcon.classList.remove('fa-volume-xmark');
-            muteIcon.classList.add('fa-volume-high');
-        } else {
-            audio.muted = true;
-            muteIcon.classList.remove('fa-volume-high');
-            muteIcon.classList.add('fa-volume-xmark');
-        }
-    });
-
-    // Initialize view count
-    if (viewCountElement) {
-        let viewCount = localStorage.getItem('viewCount') || 0;
-        viewCountElement.textContent = viewCount;
-
-        // Increment view count
-        viewCount++;
-        viewCountElement.textContent = viewCount;
-
-        // Save the updated view count to local storage
-        localStorage.setItem('viewCount', viewCount);
-    }
-
-    // Start the audio manually for testing purposes
-    document.body.addEventListener('click', () => {
-        audio.play().catch(error => {
-            console.error('Audio play failed:', error);
+        // Audio control functionality
+        muteButton.addEventListener('click', () => {
+            if (audio.muted) {
+                audio.muted = false;
+                muteIcon.classList.remove('fa-volume-xmark');
+                muteIcon.classList.add('fa-volume-high');
+            } else {
+                audio.muted = true;
+                muteIcon.classList.remove('fa-volume-high');
+                muteIcon.classList.add('fa-volume-xmark');
+            }
         });
-    });
-</script>
 
+        // Initialize view count
+        if (viewCountElement) {
+            let viewCount = parseInt(localStorage.getItem('viewCount')) || 0;
+            viewCount++;
+            viewCountElement.textContent = viewCount;
+
+            // Save the updated view count to local storage
+            localStorage.setItem('viewCount', viewCount);
+        }
+
+        // Start the audio manually for testing purposes
+        document.body.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play().catch(error => {
+                    console.error('Audio play failed:', error);
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
