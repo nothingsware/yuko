@@ -434,6 +434,28 @@ body {
     left: 0;
 }
 
+.profileViews {
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+    padding: 5px 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7); /* Optional: Adds a slight background for better visibility */
+    border-radius: 5px; /* Optional: Adds rounded corners */
+    color: #ffffff; /* Adjust color if needed */
+}
+
+.profileViews i {
+    font-size: 1.2rem; /* Adjust icon size if needed */
+}
+
+.profileViews span {
+    font-size: 1rem; /* Adjust text size if needed */
+}
+
+
 @keyframes typing {
     from { width: 0; }
     to { width: 100%; }
