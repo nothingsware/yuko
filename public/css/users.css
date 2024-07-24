@@ -425,25 +425,29 @@ body {
 }
 
 .container .profileViews {
-   display: flex;
+    display: flex;
     align-items: center;
     gap: .25rem;
     padding: 5px 10px;
     position: absolute;
     bottom: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.7); /* Optional: Adds a slight background for better visibility */
-    border-radius: 5px; /* Optional: Adds rounded corners */
-    color: #ffffff; /* Adjust color if needed */
+    background: rgba(0, 0, 0, 0.7); /* Slight background for better visibility */
+    border-radius: 5px; /* Rounded corners */
+    color: #ffffff; /* Text color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: Adds a subtle shadow for better separation */
 }
 
 .profileViews i {
-    font-size: 1.2rem; /* Adjust icon size if needed */
+    font-size: 2em; /* Icon size */
+    color: #ffffff; /* Icon color */
 }
 
 .profileViews span {
-    font-size: 1rem; /* Adjust text size if needed */
+    font-size: 1.5rem; /* Text size */
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.7), 0 0 5px rgba(255, 255, 255, 0.5); /* Glowing effect */
 }
+
 
 
 @keyframes typing {
